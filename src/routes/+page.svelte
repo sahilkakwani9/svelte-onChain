@@ -1,0 +1,91 @@
+<script>
+	import { goto } from '$app/navigation';
+	import connectWallet from "../utils/connectWallet";
+	let address = "";
+	console.log(address);
+</script>
+
+<svelte:head>
+	<title>Dynamic NFT</title>
+	<meta name="description" content="Onchain NFT" />
+</svelte:head>
+
+<section>
+	<div class="container">
+		<h1 class="title">
+			NFT<br />On <span>⛓</span> Chain
+		</h1>
+		<button
+			class="connect"
+			on:click={async () => {
+				const data = await connectWallet();
+				console.log('sahil')
+				address = data?.address;
+				goto('/mint')
+			}}>Connect Wallet</button
+		>
+		<h3>{address}</h3>
+	</div>
+</section>
+
+<style>
+	.title {
+		font-size: 8rem;
+		font-weight: 700;
+		font-family: Poppins;
+		color: white;
+		text-shadow: 10px 10px 2px #ff9624;
+		opacity: 0.9;
+	}
+	span {
+		/* text-shadow: none; */
+		/* color: #f; */
+	}
+	.connect {
+		width: 16rem;
+		height: 4rem;
+		/* border-width: 2px;
+		border-color: #ff1d00; */
+		display: inline-block;
+		border: 0.3em solid #ff9624;
+		margin: 0 0.3em 0.3em 0;
+		border-radius: 0.4em;
+		box-sizing: border-box;
+		text-decoration: none;
+		font-family: "Inter", sans-serif;
+		font-weight: bolder;
+		color: #fff;
+		background-color: #ff9624;
+		text-align: center;
+		transition: all 0.2s;
+		font-size: 1.6rem;
+		box-shadow: 8px 8px 0px gray;
+	}
+	.connect:hover {
+		box-shadow: 0px 0px gray;
+		transition: ease-in-out 0.6s;
+	}
+	.container {
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		min-width: 100vw;
+	}
+	@media (max-width: 700px) {
+		.title {
+			font-size: 5rem;
+			margin-top: 60%;
+			text-align: left;
+			width: 100vw;
+		}
+		.container {
+			/* height: 100vh; */
+		}
+		.connect {
+			margin-top: 30%;
+		}
+		span {
+			display: none;
+		}
+	}
+</style>
