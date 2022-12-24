@@ -73,16 +73,22 @@
 	}
 	@media (max-width: 700px) {
 		.title {
-			font-size: 5rem;
-			margin-top: 60%;
-			text-align: left;
+			font-size: 60px;
+			margin-top: 200px;
+			text-align: center;
 			width: 100vw;
+			text-shadow: 6px 6px 2px #ff9624;
 		}
 		.container {
-			/* height: 100vh; */
+			height: 86vh;
+			margin-block: auto;
+			display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
 		}
 		.connect {
-			margin-top: 30%;
+			/* margin-top: 50px; */
 		}
 		span {
 			display: none;
