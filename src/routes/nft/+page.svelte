@@ -23,7 +23,7 @@
                 <div class="card">
                     <h2 class="name">{n.name}</h2>
                     <h3 class="description">{n.description}</h3>
-                    <div>
+                    <div class="btn-wrap">
                         <button on:click={async()=>{await trainNFT(index+1)}}>Train</button>
                         <button><a href={`https://testnets.opensea.io/assets/mumbai/0x7868a00fc9a836be3a626f83043a34250470166c/${index+1}`}>View</a></button>
                     </div>
@@ -58,7 +58,7 @@
     }
     a{
         text-decoration: none;
-        color: #000;
+        color: #fff;
     }
     .orange {
         color: #ff9624;
@@ -66,7 +66,10 @@
     }
     .box {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        row-gap: 2rem;
+        column-gap: 1rem;
+        flex-wrap: wrap;
         margin-top: 6vh;
     }
     .card {
@@ -74,6 +77,7 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
         background: #fff;
         width: 15vw;
@@ -81,4 +85,64 @@
         padding: 1.6vw;
         border-radius: 15px;
     }
+
+    .btn-wrap {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    button {
+		width: 5rem;
+		height: 2rem;
+		/* border-width: 2px;
+		border-color: #ff1d00; */
+		display: inline-block;
+		border: 0.3em solid #ff9624;
+		margin: 0 0.3em 0.3em 0;
+		border-radius: 0.4em;
+		box-sizing: border-box;
+		text-decoration: none;
+		font-family: "Inter", sans-serif;
+		font-weight: bolder;
+		color: #fff;
+		background-color: #ff9624;
+		text-align: center;
+		transition: all 0.2s;
+		font-size: 1rem;
+		box-shadow: 4px 4px 0px gray;
+	}
+
+    button:hover {
+		box-shadow: 0px 0px gray;
+		transition: ease-in-out 0.6s;
+	}
+
+    @media (max-width: 700px) {
+
+        .title {
+            font-size: 2.8rem;
+        }
+        .box {
+            flex-direction: column;
+            /* padding-inline: 17vw; */
+        }
+
+        .card {
+            width: 60%;
+            border-radius: 20px;
+            margin-inline: auto;
+            min-height: 35vh;
+            justify-content: space-evenly;
+            padding-inline: 5vw;
+            padding-block: 1rem;
+        }
+        .name {
+            font-size: 1.8rem;
+        }
+
+        .description {
+            font-size: 1.5rem;
+        }
+    }
+
 </style>
