@@ -204,17 +204,35 @@ input:focus ~ label, input:valid ~ label {
             0 0.25em 0 0 var(--colorShadeB);
     }
     @media (max-width: 700px) {
-        .title {
-            font-size: 5rem;
-            margin-top: 60%;
-            text-align: left;
+        section {
             width: 100vw;
         }
+        nav {
+            min-width: 112vw;
+            min-height: 10vh;
+        }
+        ul {
+            height: 100%;
+            padding-top: 2vh;
+        }
+        .title {
+            font-size: 5rem;
+            margin-top: 40%;
+        }
         .container {
+            min-width: 100vw;
             /* height: 100vh; */
         }
-        .connect {
-            margin-top: 30%;
+
+        .input {
+            flex-direction: column;
+            width: 100%;
+            margin-left: 12vw;
+            row-gap: 5vh;
+        }
+        .big-button {
+            margin-top: 10%;
+            margin-bottom: 10%;
         }
         span {
             display: none;

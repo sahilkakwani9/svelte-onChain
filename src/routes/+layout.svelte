@@ -46,9 +46,11 @@
 		color: white;
 		margin-inline: 4px;
 	}
-	@media (min-width: 480px) {
+	@media (max-width: 700px) {
 		footer {
-			padding: 12px 0;
+			padding: 12px 5px;
+			margin-top: 10px;
+			font-size: 17px;
 		}
 	}
 </style>

@@ -19,9 +19,10 @@
 			class="connect"
 			on:click={async () => {
 				const data = await connectWallet();
-				console.log('sahil')
 				address = data?.address;
-				goto('/mint')
+				if (data) {
+					goto('/mint')
+				}
 			}}>Connect Wallet</button
 		>
 		<h3>{address}</h3>
